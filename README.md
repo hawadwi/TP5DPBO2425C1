@@ -81,5 +81,18 @@ Product berperan sebagai model data murni: satu objek merepresentasikan satu bar
    - Kalau ID duplikat, tampilkan warning. Kalau database error, tangkap SQLException dan throw RuntimeException.
 
 ### DOKUMENTASI
-#### INSERT data
+#### INSERT DATA
 ![insert](Dokumentasi/INSERT_data.gif)
+
+#### INSERT PROMPT ERROR & ID ERROR
+![insert](Dokumentasi/INSERT_prompt_error.gif)
+![insert](Dokumentasi/INSERT_Id_error.gif)
+
+#### UPDATE DATA
+![update](Dokumentasi/UPDATE_data.gif)
+
+#### UPDATE PROMPT ERROR
+![update](Dokumentasi/UPDATE_prompt_error.gif)
+
+#### DELETE DATA
+![delete](Dokumentasi/DELETE_data.gif)
