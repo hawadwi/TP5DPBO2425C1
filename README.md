@@ -5,24 +5,23 @@ Saya Hawa Dwiafina Azahra dengan NIM 2400336 mengerjakan Tugas Praktikum 5 dalam
 Product berperan sebagai model data murni: satu objek merepresentasikan satu baris produk, berisi id (String), nama (String), harga (double), kategori (String), dan ratingProduk (int). Kelas ini hanya menyediakan konstruktor serta getter/setter untuk semua atribut.
 
 1. Database adalah data access layer yang menangani koneksi ke MySQL dan eksekusi query. Kelas ini memiliki 3 metode utama:
-  - selectQuery(String sql) - Menjalankan SELECT query dan mengembalikan ResultSet
-  - insertUpdateDeleteQuery(String sql) - Menjalankan INSERT/UPDATE/DELETE query
-  - isIdExists(String id) - Mengecek apakah ID sudah ada di database
+    - selectQuery(String sql) - Menjalankan SELECT query dan mengembalikan ResultSet
+    - insertUpdateDeleteQuery(String sql) - Menjalankan INSERT/UPDATE/DELETE query
+    - isIdExists(String id) - Mengecek apakah ID sudah ada di database
+    - Konfigurasi database:
+      - Host: localhost:3306
+      - Database: db_product
+      - User: root
+      - Password: (kosong)
 
-  a. Konfigurasi database:
-    - Host: localhost:3306
-    - Database: db_product
-    - User: root
-    - Password: (kosong)
-
-2. ProductMenu adalah jendela utama (JFrame) yang menggabungkan tampilan dan logika kontrol. Di dalamnya terdapat: s
-   a. selectedIndex yang menyimpan indeks item yang sedang dipilih di tabel. Nilai -1 berarti tidak ada baris yang aktif, nilai >= 0 berarti ada baris yang dipilih dan form berada pada mode "Update/Delete".
-   b. oldId yang menyimpan ID lama saat melakukan update, untuk membedakan apakah ID berubah atau tidak.
-   c. Komponen input:
+2. ProductMenu adalah jendela utama (JFrame) yang menggabungkan tampilan dan logika kontrol. Di dalamnya terdapat: 
+   - selectedIndex yang menyimpan indeks item yang sedang dipilih di tabel. Nilai -1 berarti tidak ada baris yang aktif, nilai >= 0 berarti ada baris yang dipilih dan form berada pada mode "Update/Delete".
+   - oldId yang menyimpan ID lama saat melakukan update, untuk membedakan apakah ID berubah atau tidak.
+   - Komponen input:
      - idField, namaField, hargaField untuk input teks
      - sliderRating untuk nilai 1–5 sehingga pengguna tidak salah memasukkan skala
      - cbKategori untuk memilih kategori valid, dengan placeholder "????" yang menandakan belum memilih
-   d. Komponen aksi:
+   - Komponen aksi:
      - addUpdateButton yang labelnya berubah otomatis sesuai konteks (Add saat idle, Update saat baris dipilih)
      - cancelButton untuk mereset form
      - deleteButton yang hanya ditampilkan saat ada baris terpilih
@@ -31,7 +30,6 @@ Product berperan sebagai model data murni: satu objek merepresentasikan satu bar
 
 ### ALUR PROGRAM
 1. Inisialisasi:
-
    - Pas ProductMenu dibuat, buat object database untuk koneksi MySQL.
    - Atur ukuran window 700x600 px, letakkan di tengah layar, set background putih.
    - Atur slider rating 1–5, isi combobox kategori (plus "????"), set jumlah kolom tabel (ID, Nama, Harga, Kategori, Rating).
